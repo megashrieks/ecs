@@ -1,3 +1,4 @@
+import React from 'react';
 export default () => {
-    return "Search Result"
+    return <div>Search Result</div>
 }

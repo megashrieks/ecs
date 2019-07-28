@@ -1,3 +1,4 @@
+import React from 'react';
 export default () => {
-    return "Search Options"
+    return <div>Search Options</div>
 }
