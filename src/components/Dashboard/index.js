@@ -5,6 +5,7 @@ import UserControls from '../UserControls/'
 import SearchOptions from '../SearchOptions/'
 import SearchResult from '../SearchResult/'
 import BookPage from '../BookPage'
+import CartPage from '../CartPage'
 import './index.css'
 export default (props) => {
     let BookContext = useContext(Context);
@@ -27,6 +28,7 @@ export default (props) => {
                 <SearchResult books={result}/>
             </>}></Route>
             <Route path="/book/:id" component={BookPage}></Route>
+            <Route path="/checkout" component={() => <CartPage/>}></Route>
         </Switch>
     </div>
 }

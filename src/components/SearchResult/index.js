@@ -10,13 +10,14 @@ export default ({books}) => {
         changePage(0)
     }, [books])
     let data = books.slice(page * items_to_show, (page + 1) * items_to_show);
-    console.log(page * items_to_show, (page + 1) * items_to_show);
-    console.log(data[0]&&Object.keys(data[0]))
     return <div className="search-result">
         <div className="page-info">
-            <div style={{ width: "50%" }}>
+            {!!totalPages && <div style={{ width: "50%" }}>
                 showing page <b>{page+1}</b> of <b>{totalPages}</b>
-            </div>
+            </div>}
+            {!totalPages && <div style={{ width: "50%" }}>
+                No book matched that search
+            </div>}
             <div style={{ width: "25%" }}/>
             <div style={{width:"25%",textAlign:"right"}}>
                 {page != 0 && <button
