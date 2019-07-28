@@ -11,7 +11,7 @@ export default (props) => {
     let BookContext = useContext(Context);
     let books = BookContext.bookDetails;
     let [term, changeTerm] = useState("");
-    let [sort, changeSort] = useState("title");
+    let [sort, changeSort] = useState("average_rating");
     let filtered = [], result = [];
     for (let i = 0; i < books.length; ++i){
         if ((books[i].title + "").search(new RegExp(term, "i")) != -1) filtered.push(books[i]);
@@ -25,7 +25,8 @@ export default (props) => {
         <Switch>
             <Route path="/" exact component={props => <>
                 <SearchOptions search={changeTerm} value={term} sortBy={sort} sort={changeSort}/>
-                <SearchResult books={result}/>
+                {!BookContext.loading ? <SearchResult books={result} /> :
+                    <div style={{ textAlign: "center", padding: "10px" }}>Loading Books please wait</div>}
             </>}></Route>
             <Route path="/book/:id" component={BookPage}></Route>
             <Route path="/checkout" component={() => <CartPage/>}></Route>

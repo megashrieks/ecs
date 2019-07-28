@@ -9,10 +9,16 @@ body {
 html,body {
 	height : 100%;
 	margin:0;
+	font-family:Roboto;
 }
 #root,.App{
 	height:100%;	
 }
-.checkout-button{
-	
+select{
+	padding:5px 10px;
+	margin:0 5px;
+	background:white;
+	border-radius:5px;
+	outline:none;
+	min-width:100px;
 }

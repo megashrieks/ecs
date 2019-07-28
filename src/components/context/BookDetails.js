@@ -16,16 +16,19 @@ let fetch_data = () => new Promise((resolve, reject) => {
 });
 
 let BookDetailProvider = ({ children }) => {
-    let [bookDetails,changeDetails] = useState([]);
+    let [bookDetails, changeDetails] = useState([]);
+    let [loading, setLoading] = useState(true);
     useEffect(() => {
         fetch_data()
             .then(data => {
                 changeDetails(data);
+                setLoading(false);
             })
             .catch(console.error);
     }, []);
     return <Context.Provider value={{
-        bookDetails
+        bookDetails,
+        loading
     }}>
         {children}
     </Context.Provider>

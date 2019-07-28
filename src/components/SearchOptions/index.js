@@ -15,7 +15,7 @@ export default ({search,value,sort,sortBy}) => {
             </button>
         </div>
         {options && <div className="options-content">
-            Sort by <select value={sortBy} onChange={({target:{value}})=>sort(value)}>
+            Sort by : <select value={sortBy} onChange={({target:{value}})=>sort(value)}>
                 <option value="title">name</option>
                 <option value="price">price</option>
                 <option value="average_rating">rating</option>
