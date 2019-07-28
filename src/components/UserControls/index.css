@@ -14,6 +14,8 @@
     border-radius:50%;
     background:rgb(0,0,0,0.1);
     cursor:pointer;
+    text-decoration:none;
+    color:inherit;
 }
 .user-avatar:hover{
     background:#fff;
@@ -28,8 +30,22 @@
     border-radius:50%;
     background:rgb(0,0,0,0.1);
     cursor:pointer;
+    position:relative;
 }
 .cart-menu:hover{
     background:#333;
     color:#fff;
+}
+.cart-length{
+    width:20px;
+    position:absolute;
+    top:50%;
+    right:-10px;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    background:rgba(255,255,255,0.84);
+    font-size:0.7em;
+    border-radius:50%;
+    color:#000;
 }

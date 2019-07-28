@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Context } from '../context/BookDetails';
+import { Context as Book } from '../context/BookDetails';
+import { Context as Cart } from '../context/CartDetails';
 import "./index.css";
 import Stars from '../Stars';
 export default ({ match: { params: { id } } }) => {
-    let BookContext = useContext(Context);
+    let BookContext = useContext(Book);
+    let CartContext = useContext(Cart);
     let { bookDetails } = BookContext;
     let title, authors, average_rating, ratings_count, price,language_code,isbn;
     for (let i = 0; i < bookDetails.length; ++i){
@@ -34,8 +36,18 @@ export default ({ match: { params: { id } } }) => {
             <div className="p-book-language">language :  {language_code}</div>
             <div className="p-book-isbn">ISBN :  {isbn}</div>
             <div className="p-book-price">Price : {price} <i className="fa fa-rupee-sign" /></div>
-            {/*TODO*/}
-            <button className = "add-to-cart">Add to Cart <i className = "fa fa-cart-plus"/></button>
+            {!CartContext.cart[id] && <button className="add-to-cart"
+                onClick={() => CartContext.changeCart(cart => ({...cart, [id]: 1}))}>
+                    Add to Cart <i className="fa fa-cart-plus" />
+            </button>}
+            {!!CartContext.cart[id] && <button className="add-to-cart"
+                onClick={() => CartContext.changeCart(cart => { 
+                    let temp = { ...cart };
+                    delete temp[id];
+                    return temp;
+                })}>
+                Remove from Cart <i className="fa fa-cart-arrow-down" />
+            </button>}
         </div>
         </div>
 }
