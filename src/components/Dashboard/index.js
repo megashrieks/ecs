@@ -7,10 +7,10 @@ import SearchResult from '../SearchResult/'
 import './index.css'
 
 export default (props) => {
-    // let BookContext = useContext(Context);
+    let BookContext = useContext(Context);
     return <div className="container">
         <UserControls />
         <SearchOptions />
-        <SearchResult />
+        <SearchResult books={BookContext.bookDetails}/>
     </div>
 }

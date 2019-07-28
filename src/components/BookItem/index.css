@@ -1,0 +1,67 @@
+.book-item{
+    display:flex;
+    min-height:80px;
+    max-height:80px;
+    margin-top:10px; 
+    padding:10px 20px;
+    cursor:pointer;
+    transition:0.3s;
+    box-sizing: unset;
+}
+.book-item:hover{
+    background:#eee;
+}
+
+.book-image{
+    border:1px solid #eee;
+    background:#fff;
+    margin-right:15px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    min-width:75px;
+    max-width:75px;
+}
+.book-image .centered{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.book-details{
+    width:75%;
+}
+
+.book-title{
+    font-size:0.8em;
+    margin-bottom:5px;
+    font-weight: bold;
+    white-space: nowrap; 
+    overflow: hidden;
+    width:100%;
+    text-overflow: ellipsis;
+}
+.book-authors{
+    color:#555;
+    font-size:0.7em;
+    white-space: nowrap; 
+    overflow: hidden;
+    width:100%;
+    text-overflow: ellipsis;
+}
+.stars{
+    color:#888;
+    margin:4px 0;
+    font-size:0.7em;
+}
+.book-price{
+    margin:2px 0;
+    font-size:0.7em;
+}
+
+.stars-container{
+    color:grey;
+}
+.fa.fa-star.active{
+    color:gold;
+}
