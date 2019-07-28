@@ -1,16 +1,11 @@
 import React from 'react';
 import "./index.css";
+import Stars from '../Stars';
+import { Link } from 'react-router-dom';
 
-const Stars = ({ value }) => {
-    return <div className="stars-container">
-        {new Array(5).fill(0).map((_, index) => {
-            return <i className={"fa fa-star" + ((index+1) < value ? " active" : "")}/>
-        })}  ({value})
-    </div>
-}
 
-export default ({ data: { title,authors,average_rating,ratings_count,price } }) => {
-    return <div className="book-item">
+export default ({ data: { bookID, title, authors, average_rating, ratings_count, price } }) => {
+    return <Link className="book-item" to = {"/book/"+bookID}>
         <div className="book-image"><div className="centered">{title[0]}</div></div>
         <div className="book-details">
             <div className="book-title">{title}</div>
@@ -21,5 +16,5 @@ export default ({ data: { title,authors,average_rating,ratings_count,price } }) 
             </div>
             <div className="book-price">{price} <i className = "fa fa-rupee-sign"/></div>
         </div>
-    </div>
+    </Link>
 }
