@@ -34,6 +34,7 @@ export default ({ match: { params: { id } } }) => {
             <div className="p-book-language">language :  {language_code}</div>
             <div className="p-book-isbn">ISBN :  {isbn}</div>
             <div className="p-book-price">Price : {price} <i className="fa fa-rupee-sign" /></div>
+            {/*TODO*/}
             <button className = "add-to-cart">Add to Cart <i className = "fa fa-cart-plus"/></button>
         </div>
         </div>
